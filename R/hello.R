@@ -1,4 +1,4 @@
 
 hello <- function(x) {
-  print(paste('Hello',x,'world'))
+  print(paste('Hello',x,'this is my first R package!'))
 }
