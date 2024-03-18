@@ -22,7 +22,7 @@ get_variable_names <- function(dag_tr){
   return(variable_names)
 }
 
-get_igraph_obj <- function(edge_list){
+get_igraph_obj <- function(edge_list,directed=TRUE){
 
   edges <- as.matrix(edge_list)
   dag_tr <- graph_from_edgelist(edges, directed = directed)
