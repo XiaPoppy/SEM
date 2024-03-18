@@ -2,11 +2,11 @@
 \alias{hello}
 \title{Hello, World!}
 \usage{
-hello()
+hello(x)
 }
 \description{
-Prints 'Hello, world!'.
+Prints 'Hello <input> this is my first R package!'.
 }
 \examples{
-hello()
+hello('Xia')
 }
