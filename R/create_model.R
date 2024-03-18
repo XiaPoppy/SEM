@@ -1,5 +1,23 @@
+#' Create Model Fomulas
+#'
+#' Return an object which stores the dependence fomula, e.g. 'y ~ x1 + x2' of
+#' each node with two different data types.
+#'
+#' @param adjacency_matrix the adjacency matrix.
+#' @param variable_names a vector of variable names.
+#' @return a list/string that stores the relation fomula of each node.
+#' @export
+#' @examples
+#' adj_mat <- matrix(c(0,0,0,1,0,0,0,1,0), nrow=3, ncol=3, byrow=TRUE)
+#' variable_names <- c('x1','x2','x3')
+#'
+#' # get a list object
+#' createModelList(adj_matrix, variable_names)
+#'
+#' # get a string object
+#' createModelString(adj_matrix, variable_names)
+
 createModelList <- function(adjacency_matrix, variable_names) {
-# Return: a list that stores the relation fomula of each node
 
   model_list <- list()
 
@@ -28,22 +46,4 @@ createModelString <- function(adjacency_matrix, variable_names) {
   }
 
   return(model_string)
-}
-
-
-getModelData <- function(i,adjacency_matrix, variable_names,data) {
-#Return: data of variables in the fomula of i-th node
-
-# Parameter description:
-# i: the integral number taking from 1 to length(vairable_names)
-# data: the data containing variable_names, can also be the u-scaled data
-
-  parents <- variable_names[adjacency_matrix[,i] == 1]
-  if (length(parents) > 0) {
-    data <- data[c(variable_names[i],parents)]
-  } else {
-    data <- data[variable_names[i]]
-  }
-
-  return(data)
 }
