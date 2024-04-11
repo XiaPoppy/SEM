@@ -12,16 +12,18 @@
 #' #
 #'
 
-
-is_connect <- function(edgelist, directed=TRUE){
-# return: TRUE or FALSE value, is connected graph or not
-  graph <- graph_from_edgelist(edge_list, directed = directed)
-
-  return(is.connected(graph))
-}
-
 get_subedgelist <- function(node_name, edgelist,directed=TRUE){
-  sub_edgelist <- list()#initialize
+  graph <- graph_from_edgelist(edge_list, directed = directed)
+  if(is.connected(graph)){
+    print('This graph is connected')
+    return(edge_list)
+  }else{
+    print('This graph is unconnected')
+    sub_edgelist <- list()#initialize
+    #########TODO###################
 
-  return(sub_edgelist)
+
+    ################################
+    return(sub_edgelist)
+  }
 }

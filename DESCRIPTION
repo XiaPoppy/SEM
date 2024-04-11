@@ -4,6 +4,11 @@ Title: Functions Used in Thesis
 Version: 0.1.0
 Author: Danyang Xia <xdyrachel@gmail.com>
 Maintainer: Danyang Xia <xdyrachel@gmail.com>
+Imports: vinereg,
+lavaan,
+igraph,
+ggplot2,
+tidyr
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: GPL-3
