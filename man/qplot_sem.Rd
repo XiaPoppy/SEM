@@ -4,13 +4,27 @@
 \alias{qplot_sem}
 \title{Get Quantile Plots from a Gaussia SEM}
 \usage{
-qplot_sem(fitted_model, n)
+qplot_sem(
+  fitted_sem,
+  dat,
+  alpha = c(0.1, 0.5, 0.9),
+  adjacency_matrix,
+  variable_names,
+  fomula
+)
 }
 \arguments{
-\item{fitted_model}{The fitted gaussian structural model, a lavaan object.}
+\item{fitted_sem}{The fitted gaussian structural model, a lavaan object.}
 
-\item{n}{the number of points between 0 and 1 that will be generated,
-with the default value 100.}
+\item{dat}{original dataset used to generate sem.}
+
+\item{alpha}{default value is (0.1, 0.5, 0.9).}
+
+\item{adjacency_matrix}{the adjacency matrix.}
+
+\item{variable_names}{vector of variable names.}
+
+\item{fomula}{the model fomula used for sem, should be a list.}
 }
 \description{
 Get Quantile Plots from a Gaussia SEM
