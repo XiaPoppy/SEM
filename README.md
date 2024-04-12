@@ -1,8 +1,11 @@
 This is a R package.
 
-Startup: 
-devtools::install_github("XiaPoppy/SEM")
-library(dvinesem)
+Startup-download: 
+
+`devtools::install_github("XiaPoppy/SEM")`
+
+
+`library(dvinesem)`
 
 
 | function                                                             | file                                                                             | description                                                                                                         |
