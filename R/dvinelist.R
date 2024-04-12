@@ -14,7 +14,7 @@
 #' @examples
 #' #
 #'
-source(get_model_data.R)
+source('get_model_data.R')
 dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
                       uscale=FALSE,family_set = 'parametric',u_data=NULL){
 
