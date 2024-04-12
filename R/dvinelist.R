@@ -14,7 +14,19 @@
 #' @examples
 #' #
 #'
-source('get_model_data.R')
+#source('get_model_data.R')
+getModelData <- function(i,adjacency_matrix, variable_names,data) {
+
+  parents <- variable_names[adjacency_matrix[,i] == 1]
+  if (length(parents) > 0) {
+    data <- data[c(variable_names[i],parents)]
+  } else {
+    data <- data[variable_names[i]]
+  }
+
+  return(data)
+}
+
 dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
                       uscale=FALSE,family_set = 'parametric',u_data=NULL){
 
@@ -28,11 +40,11 @@ dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
     if (length(parents) > 0) {
       if(uscale){
         x <- getModelData(i,adjacency_matrix, variable_names,u_data)
-        vc[[i]] <- vinereg(fomula1[[i]], x,family_set = family_set,uscale = TRUE)
+        vc[[i]] <- vinereg(fomula[[i]], x,family_set = family_set,uscale = TRUE)
         l_vc <- l_vc + 1
       }else{
         x <- getModelData(i,adjacency_matrix, variable_names,data)
-        vc[[i]] <- vinereg(fomula1[[i]], x,family_set = family_set,uscale = FALSE)
+        vc[[i]] <- vinereg(fomula[[i]], x,family_set = family_set,uscale = FALSE)
         l_vc <- l_vc + 1
       }
       #j <- j+1
