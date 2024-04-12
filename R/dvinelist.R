@@ -14,6 +14,7 @@
 #' @examples
 #' #
 #'
+source(get_model_data.R)
 dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
                       uscale=FALSE,family_set = 'parametric',u_data=NULL){
 
@@ -26,7 +27,6 @@ dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
     parents <- variable_names[adjacency_matrix[,i] == 1]
     if (length(parents) > 0) {
       if(uscale){
-        #import get_model_data
         x <- getModelData(i,adjacency_matrix, variable_names,u_data)
         vc[[i]] <- vinereg(fomula1[[i]], x,family_set = family_set,uscale = TRUE)
         l_vc <- l_vc + 1
