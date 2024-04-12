@@ -29,6 +29,7 @@ get_adj_matrix <- function(edge_list, directed=TRUE){
   return(adjacency_matrix)
 }
 
+
 get_igraph_obj <- function(edge_list,directed=TRUE){
 
   edges <- as.matrix(edge_list)

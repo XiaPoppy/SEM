@@ -15,17 +15,7 @@
 #' #
 #'
 #source('get_model_data.R')
-getModelData <- function(i,adjacency_matrix, variable_names,data) {
 
-  parents <- variable_names[adjacency_matrix[,i] == 1]
-  if (length(parents) > 0) {
-    data <- data[c(variable_names[i],parents)]
-  } else {
-    data <- data[variable_names[i]]
-  }
-
-  return(data)
-}
 
 dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
                       uscale=FALSE,family_set = 'parametric',u_data=NULL){
@@ -65,4 +55,16 @@ dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
   }
 
   return(vc,fig)
+}
+
+getModelData <- function(i,adjacency_matrix, variable_names,data) {
+
+  parents <- variable_names[adjacency_matrix[,i] == 1]
+  if (length(parents) > 0) {
+    data <- data[c(variable_names[i],parents)]
+  } else {
+    data <- data[variable_names[i]]
+  }
+
+  return(data)
 }
