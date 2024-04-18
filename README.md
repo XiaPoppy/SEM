@@ -1,5 +1,13 @@
 This is a R package.
 
+Startup-download: 
+
+`devtools::install_github("XiaPoppy/SEM")`
+
+
+`library(dvinesem)`
+
+
 | function                                                             | file                                                                             | description                                                                                                         |
 |:--------------------------------------------------------------------:|:--------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
 | `createModel()`                                                      | [create_model.R](https://github.com/XiaPoppy/SEM/blob/main/R/create_model.R)     | Return an object which stores the dependence fomula, e.g. 'y ~ x1 + x2' of each node with two different data types. |
