@@ -29,7 +29,7 @@ get_adj_matrix <- function(edge_list, directed=TRUE){
   return(adjacency_matrix)
 }
 
-
+#' @export
 get_igraph_obj <- function(edge_list,directed=TRUE){
 
   edges <- as.matrix(edge_list)
@@ -38,7 +38,7 @@ get_igraph_obj <- function(edge_list,directed=TRUE){
   return(dag_tr)
 }
 
-
+#' @export
 get_variable_names <- function(dag_tr){
 
 # Parameter description:
