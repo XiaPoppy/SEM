@@ -43,17 +43,22 @@ qplot_sem <- function(fitted_sem, dat, alpha = c(0.1, 0.5, 0.9), adjacency_matri
 
     # plot
     if (nrow(df) > 0) {
-      print(
-        ggplot(df, aes(value, predict, color = alpha)) +
-          geom_point(alpha = 0.15) +
-          geom_smooth(se = FALSE) +
-          facet_wrap(~var, scale = "free_x") +
-          ylab(expression(Q(y * "|" * x[1] * ",...," * x[p]))) +
-          xlab(expression(x[k])) +
-          theme(legend.position = "bottom")
+      p <- ggplot(df, aes(value, predict, color = alpha)) +
+        geom_point(alpha = 0.15) +
+        geom_smooth(se = FALSE) +
+        facet_wrap(~var, scales = "free_x") +
+        ylab(expression(Q(y * "|" * x[1] * ",...," * x[p]))) +
+        xlab(expression(x[k])) +
+        theme(legend.position = "bottom")
 
-      )
-      grid.text(fomula[i], x = 0.5, y = 0.99, just = "center", gp = gpar(fontsize = 8, fontface = "bold"))
+      grid.newpage()
+      pushViewport(viewport(layout = grid.layout(2, 1, heights = unit(c(1, 10), "null"))))
+      pushViewport(viewport(layout.pos.row = 1, layout.pos.col = 1))
+      grid.text(fomula[i], x = unit(0.5, "npc"), y = unit(0.5, "npc"), just = "center", gp = gpar(fontsize = 15, fontface = "bold"))
+      popViewport()
+      pushViewport(viewport(layout.pos.row = 2, layout.pos.col = 1))
+      print(p, newpage = FALSE)
+      popViewport()
     }
   }
 }
