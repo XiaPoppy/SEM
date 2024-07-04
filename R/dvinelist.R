@@ -1,4 +1,4 @@
-#' Get List of Dvine Objects and Quantile plots
+#' Get List of Dvine Objects
 #'
 #'
 #'
@@ -8,7 +8,6 @@
 #' @param data x-scaled data, used to train the dvine model.
 #' @param uscale default value: FALSE, used in \code{vinereg::vinereg}.
 #' @param family_set used in \code{vinereg::vinereg}.
-#' @param u_data optional parameter, used when uscale=TRUE
 #' @return a list of dvine objects and a list of quantile graphs
 #' @export
 #' @examples
@@ -18,7 +17,7 @@
 
 
 dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
-                      uscale=FALSE,family_set = 'parametric',u_data=NULL){
+                      uscale=FALSE,family_set = 'parametric'){
 
   vc <- vector('list',length=length(variable_names))
   leng <- 1:length(variable_names)
@@ -38,7 +37,7 @@ dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
         l_vc <- l_vc + 1
       }
       #j <- j+1
-    } else {vc[[i]] <- u.data[[names(x)]]}
+    } else {vc[[i]] <- 0}
   }
 
   fig <- vector('list',length=l_vc)
@@ -54,9 +53,10 @@ dvinelist <- function(fomula,adjacency_matrix,variable_names,data,
     }
   }
 
-  return(vc,fig)
+  return(vc)
 }
 
+#' @export
 getModelData <- function(i,adjacency_matrix, variable_names,data) {
 
   parents <- variable_names[adjacency_matrix[,i] == 1]

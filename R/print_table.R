@@ -10,17 +10,20 @@
 print_mod <- function(vc){
   vine_df <- data.frame()
 
-  for (i in 1:8) {
-    summary_stats <- summary(vc[[i]]$vine,digits=2)
-    #rewrite conditioning and conditioned columns:
-    for(j in 1:length(rownames(summary_stats))){
-      summary_stats$conditioned[[j]] <-
-        vc[[i]]$vine$names[summary_stats$conditioned[[j]]]
-      summary_stats$conditioning[[j]] <-
-        vc[[i]]$vine$names[summary_stats$conditioning[[j]]]
+  for (i in 1:length(vc)) {
+    if(class(vc[[i]])=='vinereg'){
+      summary_stats <- summary(vc[[i]]$vine,digits=2)
+      #rewrite conditioning and conditioned columns:
+      for(j in 1:length(rownames(summary_stats))){
+        summary_stats$conditioned[[j]] <-
+          vc[[i]]$vine$names[summary_stats$conditioned[[j]]]
+        summary_stats$conditioning[[j]] <-
+          vc[[i]]$vine$names[summary_stats$conditioning[[j]]]
+      }
+      # Append the summary statistics
+      vine_df <- rbind(vine_df, as.data.frame(summary_stats))
     }
-    # Append the summary statistics
-    vine_df <- rbind(vine_df, as.data.frame(summary_stats))
+
   }
 
   vine_df$conditioned <- sapply(vine_df$conditioned, toString)
@@ -33,7 +36,7 @@ print_mod <- function(vc){
   vine_df[, numeric_cols] <- round(vine_df[, numeric_cols], 2)
 
   # Printing the updated dataframe
-  print(vine_df[c(3,4,5,6,7,9,10,11)])
+  print(vine_df[c(3,4,6,7,8,9,10,11)])
   #xtable(vine_df[c(3,4,5,6,7,9,10,11)])#latex output
 }
 
