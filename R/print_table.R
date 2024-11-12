@@ -2,7 +2,7 @@
 #'
 #'
 #' @param vc a list of vinereg object.
-#' @return a table describing vine type between variables/ a table of all statistic scores.
+#' @return a table describing vine type between variables.
 #' @export
 #' @examples
 #' #
@@ -40,6 +40,12 @@ print_mod <- function(vc){
   #xtable(vine_df[c(3,4,5,6,7,9,10,11)])#latex output
 }
 
+
+#'Print Dvine based SEM in a table
+#'
+#'
+#' @param vc a list of vinereg object.
+#' @return a table of all statistic scores.
 #' @export
 print_stat <- function(vc){
   summary_df <- data.frame()

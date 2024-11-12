@@ -1,6 +1,6 @@
 #' Get Adjacency Matrix and Vairable Names
 #'
-#' Get the adjacency matrix and an igraph object from a given edge list and variable names from an igraph object.
+#' Get the adjacency matrix.
 #'
 #' @param edge_list a list of 2 columns, directed edges pointing from column 1 to 2.
 #' @param directed to tell if the graph is directed or not, default value is TRUE.
@@ -28,7 +28,12 @@ get_adj_matrix <- function(edge_list, directed=TRUE){
 
   return(adjacency_matrix)
 }
-
+#' Get Adjacency Matrix and Vairable Names
+#'
+#' Get an igraph object from a given edge list.
+#'
+#' @param edge_list a list of 2 columns, directed edges pointing from column 1 to 2.
+#' @param directed to tell if the graph is directed or not, default value is TRUE.
 #' @export
 get_igraph_obj <- function(edge_list,directed=TRUE){
 
@@ -38,6 +43,11 @@ get_igraph_obj <- function(edge_list,directed=TRUE){
   return(dag_tr)
 }
 
+#' Get Adjacency Matrix and Vairable Names
+#'
+#' Get variable names from an igraph object.
+#'
+#' @param dag_tr an igraph object.
 #' @export
 get_variable_names <- function(dag_tr){
 

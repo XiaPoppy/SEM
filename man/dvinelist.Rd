@@ -2,7 +2,7 @@
 % Please edit documentation in R/dvinelist.R
 \name{dvinelist}
 \alias{dvinelist}
-\title{Get List of Dvine Objects and Quantile plots}
+\title{Get List of Dvine Objects}
 \usage{
 dvinelist(
   fomula,
@@ -10,8 +10,7 @@ dvinelist(
   variable_names,
   data,
   uscale = FALSE,
-  family_set = "parametric",
-  u_data = NULL
+  family_set = "parametric"
 )
 }
 \arguments{
@@ -26,14 +25,12 @@ dvinelist(
 \item{uscale}{default value: FALSE, used in \code{vinereg::vinereg}.}
 
 \item{family_set}{used in \code{vinereg::vinereg}.}
-
-\item{u_data}{optional parameter, used when uscale=TRUE}
 }
 \value{
 a list of dvine objects and a list of quantile graphs
 }
 \description{
-Get List of Dvine Objects and Quantile plots
+Get List of Dvine Objects
 }
 \examples{
 #
