@@ -14,3 +14,9 @@ get_igraph_obj(edge_list, directed = TRUE)
 \description{
 Get an igraph object from a given edge list.
 }
+\examples{
+
+df2_tr <- data('example_edges') # edge list
+
+dag_tr <- get_igraph_obj(df2_tr)
+}

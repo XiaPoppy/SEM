@@ -17,10 +17,7 @@ get_adj_matrix(edge_list, directed = TRUE)
 Get the adjacency matrix.
 }
 \examples{
-edge_list <- list(c("b", "c"), c("a", "b"))
-directed <- TRUE
+df2_tr <- data('example_edges') # edge list
 
-get_adj_matrix(edge_list, directed)
-dag_tr <- get_igraph_obj(edge_list, directed)
-get_variable_names(dag_tr)
+get_adj_matrix(df2_tr)
 }

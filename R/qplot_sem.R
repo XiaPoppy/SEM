@@ -8,7 +8,22 @@
 #' @param fomula the model fomula used for sem, should be a list.
 #' @export
 #' @examples
-#' # example code
+#' assem <- data('example_data')
+#' assem<- as.data.frame(assem)
+#' t1 <- as.data.frame(apply(assem, 2, scale))
+#'
+#' df2_tr <- data('example_edges')
+#' edges <- as.matrix(df2_tr)
+#' dag_tr <- graph_from_edgelist(edges, directed = TRUE)
+#'
+#' adjacency_matrix <- get.adjacency(dag_tr, sparse = FALSE)
+#' variable_names <- V(dag_tr)$name
+#' fomula <- createModel(adjacency_matrix, variable_names,'list')
+#'
+#' model_string <- createModel(adjacency_matrix, variable_names,'string')
+#' fitted_model1 <- sem(model_string, data = t1,std.lv = TRUE)
+#'
+#' qplot_sem(fitted_model1,t1,adjacency_matrix,variable_names,fomula)
 #'
 #'
 

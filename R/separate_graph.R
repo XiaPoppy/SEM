@@ -7,7 +7,6 @@
 #' @param directed true or false.
 #' @param node_name the name of the variable.
 #' @return an edge-list from a subgraph containing the given node i(if possible).
-#' @export
 #' @examples
 #' #
 #'

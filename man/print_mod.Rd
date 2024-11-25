@@ -16,6 +16,18 @@ a table describing vine type between variables.
 Print Dvine based SEM in a table
 }
 \examples{
-#
 
+assem <- data('example_data')
+assem<- as.data.frame(assem)
+t1 <- as.data.frame(apply(assem, 2, scale))
+
+df2_tr <- data('example_edges')
+edges <- as.matrix(df2_tr)
+dag_tr <- graph_from_edgelist(edges, directed = TRUE)
+
+adjacency_matrix <- get.adjacency(dag_tr, sparse = FALSE)
+variable_names <- V(dag_tr)$name
+fomula <- createModel(adjacency_matrix, variable_names,'list')
+vc <- dvinelist(fomula, adjacency_matrix, variable_names,t1)
+print_mod(vc)
 }

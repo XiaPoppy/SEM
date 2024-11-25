@@ -11,11 +11,19 @@
 #' @export
 #' @examples
 #' i <- 1
-#' adj_mat <- matrix(c(0,0,0,1,0,0,0,1,0), nrow=3, ncol=3, byrow=TRUE)
-#' variable_names <- c('x1','x2','x3')
-#' data <- data.frame(x1=rnorm(10,0,1),x2=rnorm(10,0,1),x3=rnorm(10,0,1),x4=rnorm(10,0,1))
 #'
-#' subdata <- getModelData(i,adj_matrix, variable_names,data)
+#' assem <- data('example_data')
+#' assem<- as.data.frame(assem)
+#' t1 <- as.data.frame(apply(assem, 2, scale))
+#'
+#' df2_tr <- data('example_edges')
+#' edges <- as.matrix(df2_tr)
+#' dag_tr <- graph_from_edgelist(edges, directed = TRUE)
+#'
+#' adjacency_matrix <- get.adjacency(dag_tr, sparse = FALSE)
+#' variable_names <- V(dag_tr)$name
+#'
+#' x <- getModelData(i,adjacency_matrix, variable_names,t1)
 
 getModelData <- function(i,adjacency_matrix, variable_names,data) {
 
