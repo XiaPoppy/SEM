@@ -51,8 +51,8 @@ get_igraph_obj <- function(edge_list,directed=TRUE){
 #' @param dag_tr an igraph object.
 #' @export
 #' @examples
-#'
-#'data('example_edges')
+#' library(igraph)
+#' data('example_edges')
 #' df2_tr <- example_edges # edge list
 #' edges <- as.matrix(df2_tr)
 #' dag_tr <- graph_from_edgelist(edges, directed = TRUE)

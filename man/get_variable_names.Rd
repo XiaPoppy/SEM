@@ -13,7 +13,7 @@ get_variable_names(dag_tr)
 Get variable names from an igraph object.
 }
 \examples{
-
+library(igraph)
 data('example_edges')
 df2_tr <- example_edges # edge list
 edges <- as.matrix(df2_tr)

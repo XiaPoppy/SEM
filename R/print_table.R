@@ -5,6 +5,7 @@
 #' @return a table describing vine type between variables.
 #' @export
 #' @examples
+#' library(igraph)
 #'
 #' data('example_data')
 #' assem <- example_data

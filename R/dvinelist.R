@@ -11,6 +11,10 @@
 #' @return a list of dvine objects and a list of quantile graphs
 #' @export
 #' @examples
+#' library(igraph)
+#' library(vinereg)
+#' library(gridExtra)
+#'
 #' data('example_data')
 #' assem <- example_data
 #' assem<- as.data.frame(assem)

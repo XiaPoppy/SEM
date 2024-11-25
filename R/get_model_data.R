@@ -10,6 +10,7 @@
 #' @return data of variables in the formula of i-th node.
 #' @export
 #' @examples
+#' library(igraph)
 #' i <- 1
 #'
 #' data('example_data')

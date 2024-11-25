@@ -16,6 +16,7 @@ a table describing vine type between variables.
 Print Dvine based SEM in a table
 }
 \examples{
+library(igraph)
 
 data('example_data')
 assem <- example_data

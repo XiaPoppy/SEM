@@ -23,6 +23,7 @@ Return sub-dataset of the original data that contains only the columns
 used in the dependence formula.
 }
 \examples{
+library(igraph)
 i <- 1
 
 data('example_data')
