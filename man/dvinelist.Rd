@@ -33,11 +33,13 @@ a list of dvine objects and a list of quantile graphs
 Get List of Dvine Objects
 }
 \examples{
-assem <- data('example_data')
+data('example_data')
+assem <- example_data
 assem<- as.data.frame(assem)
 t1 <- as.data.frame(apply(assem, 2, scale))
 
-df2_tr <- data('example_edges')
+data('example_edges')
+df2_tr <- example_edges # edge list
 edges <- as.matrix(df2_tr)
 dag_tr <- graph_from_edgelist(edges, directed = TRUE)
 

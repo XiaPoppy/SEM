@@ -14,7 +14,8 @@ Get variable names from an igraph object.
 }
 \examples{
 
-df2_tr <- data('example_edges') # edge list
+data('example_edges')
+df2_tr <- example_edges # edge list
 edges <- as.matrix(df2_tr)
 dag_tr <- graph_from_edgelist(edges, directed = TRUE)
 

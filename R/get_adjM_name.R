@@ -1,23 +1,21 @@
 #' Get Adjacency Matrix and Vairable Names
 #'
-#' Get the adjacency matrix.
+#' Get the adjacency matrix. Within this function, man can obtain the adjacency
+#' matrix from a listdescribing edges from a Graph.
 #'
 #' @param edge_list a list of 2 columns, directed edges pointing from column 1 to 2.
 #' @param directed to tell if the graph is directed or not, default value is TRUE.
 #' @param dag_tr an igraph object.
 #' @export
 #' @examples
-#' df2_tr <- data('example_edges') # edge list
+#' data('example_edges')
+#' df2_tr <- example_edges # edge list
 #'
 #' get_adj_matrix(df2_tr)
 
 get_adj_matrix <- function(edge_list, directed=TRUE){
-# Within this function, man can obtain the adjacency matrix from a list
-# describing edges from a Graph
-
-# Parameter description:
-# edge_list: a list of 2 columns, directed edges pointing from column 1 to 2
-# directed: to tell if the graph is directed or not, default value is TRUE
+#
+#
 
   edges <- as.matrix(edge_list)
   dag_tr <- graph_from_edgelist(edges, directed = directed)
@@ -34,7 +32,8 @@ get_adj_matrix <- function(edge_list, directed=TRUE){
 #' @export
 #' @examples
 #'
-#' df2_tr <- data('example_edges') # edge list
+#'data('example_edges')
+#' df2_tr <- example_edges # edge list
 #'
 #' dag_tr <- get_igraph_obj(df2_tr)
 get_igraph_obj <- function(edge_list,directed=TRUE){
@@ -53,7 +52,8 @@ get_igraph_obj <- function(edge_list,directed=TRUE){
 #' @export
 #' @examples
 #'
-#' df2_tr <- data('example_edges') # edge list
+#'data('example_edges')
+#' df2_tr <- example_edges # edge list
 #' edges <- as.matrix(df2_tr)
 #' dag_tr <- graph_from_edgelist(edges, directed = TRUE)
 #'

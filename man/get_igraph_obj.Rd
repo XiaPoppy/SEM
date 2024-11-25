@@ -16,7 +16,8 @@ Get an igraph object from a given edge list.
 }
 \examples{
 
-df2_tr <- data('example_edges') # edge list
+data('example_edges')
+df2_tr <- example_edges # edge list
 
 dag_tr <- get_igraph_obj(df2_tr)
 }

@@ -14,10 +14,12 @@ get_adj_matrix(edge_list, directed = TRUE)
 \item{dag_tr}{an igraph object.}
 }
 \description{
-Get the adjacency matrix.
+Get the adjacency matrix. Within this function, man can obtain the adjacency
+matrix from a listdescribing edges from a Graph.
 }
 \examples{
-df2_tr <- data('example_edges') # edge list
+data('example_edges')
+df2_tr <- example_edges # edge list
 
 get_adj_matrix(df2_tr)
 }
