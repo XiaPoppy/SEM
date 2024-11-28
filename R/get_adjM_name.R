@@ -19,7 +19,7 @@ get_adj_matrix <- function(edge_list, directed=TRUE){
 
   edges <- as.matrix(edge_list)
   dag_tr <- graph_from_edgelist(edges, directed = directed)
-  adjacency_matrix <- get.adjacency(dag_tr, sparse = FALSE)
+  adjacency_matrix <- as_adjacency_matrix(dag_tr, sparse = FALSE)
 
   return(adjacency_matrix)
 }

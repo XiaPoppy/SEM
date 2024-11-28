@@ -36,7 +36,7 @@ df2_tr <- example_edges # edge list
 edges <- as.matrix(df2_tr)
 dag_tr <- graph_from_edgelist(edges, directed = TRUE)
 
-adjacency_matrix <- get.adjacency(dag_tr, sparse = FALSE)
+adjacency_matrix <- as_adjacency_matrix(dag_tr, sparse = FALSE)
 variable_names <- V(dag_tr)$name
 
 x <- getModelData(i,adjacency_matrix, variable_names,t1)

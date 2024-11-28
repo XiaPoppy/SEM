@@ -47,7 +47,7 @@ df2_tr <- example_edges # edge list
 edges <- as.matrix(df2_tr)
 dag_tr <- graph_from_edgelist(edges, directed = TRUE)
 
-adjacency_matrix <- get.adjacency(dag_tr, sparse = FALSE)
+adjacency_matrix <- as_adjacency_matrix(dag_tr, sparse = FALSE)
 variable_names <- V(dag_tr)$name
 fomula <- createModel(adjacency_matrix, variable_names,'list')
 vc_list <- dvinelist(fomula, adjacency_matrix, variable_names,t1)

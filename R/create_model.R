@@ -16,7 +16,7 @@
 #' createModel(adj_matrix, variable_names)
 #'
 #' # get a string object
-#' createModel(adj_matrix, variable_names, type='string')
+#' createModel(adj_mat, variable_names, type='string')
 
 createModel <- function(adjacency_matrix, variable_names,type='list') {
   if(type=='list'){

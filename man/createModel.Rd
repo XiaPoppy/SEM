@@ -28,5 +28,5 @@ variable_names <- c('x1','x2','x3')
 createModel(adj_matrix, variable_names)
 
 # get a string object
-createModel(adj_matrix, variable_names, type='string')
+createModel(adj_mat, variable_names, type='string')
 }
